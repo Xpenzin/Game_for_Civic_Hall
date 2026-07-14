@@ -10,7 +10,7 @@ the real-world threat and how to actually defend against it.
 
 ## How to play
 
-Just open `index.html` in a browser or click the link in the description — no install, no build step.
+Just open `index.html` in a browser or click the link in the "About" section — no install, no build step.
 
 1. Click a defense card (Firewall, Antivirus, Spam Filter, Encryption/IDS) in the left panel.
 2. Click an open tile on the grid (not on the glowing path) to deploy it.

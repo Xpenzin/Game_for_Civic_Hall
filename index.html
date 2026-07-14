@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Firewall Defense — Cyber Tower Defense</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header id="top-bar">
+      <h1>🛡️ FIREWALL DEFENSE</h1>
+      <div id="stats">
+        <span class="stat" id="level-name-stat">—</span>
+        <span class="stat">💰 <span id="money">150</span></span>
+        <span class="stat">🚨 Breaches <span id="breaches">0/3</span></span>
+        <span class="stat">🌊 Wave <span id="wave">0</span>/<span id="total-waves">6</span></span>
+      </div>
+      <div id="header-buttons">
+        <button id="manual-btn">📖 Field Manual</button>
+        <button id="menu-btn">Level Select</button>
+        <button id="start-wave-btn">Start Wave</button>
+      </div>
+    </header>
+
+    <main id="game-area">
+      <div id="shop">
+        <h2>Defenses</h2>
+        <div class="tower-card" data-tower="firewall">
+          <div class="tower-icon">🧱</div>
+          <div class="tower-main">
+            <div class="tower-name">Firewall</div>
+            <div class="tower-sub"><span class="tower-cost">$50</span> <span class="tower-count" data-tower-count="firewall">0/8</span></div>
+          </div>
+        </div>
+        <div class="tower-card" data-tower="antivirus">
+          <div class="tower-icon">💉</div>
+          <div class="tower-main">
+            <div class="tower-name">Antivirus</div>
+            <div class="tower-sub"><span class="tower-cost">$75</span> <span class="tower-count" data-tower-count="antivirus">0/5</span></div>
+          </div>
+        </div>
+        <div class="tower-card" data-tower="spamfilter">
+          <div class="tower-icon">📧</div>
+          <div class="tower-main">
+            <div class="tower-name">Spam Filter</div>
+            <div class="tower-sub"><span class="tower-cost">$40</span> <span class="tower-count" data-tower-count="spamfilter">0/8</span></div>
+          </div>
+        </div>
+        <div class="tower-card" data-tower="encryption">
+          <div class="tower-icon">🔐</div>
+          <div class="tower-main">
+            <div class="tower-name">Encryption/IDS</div>
+            <div class="tower-sub"><span class="tower-cost">$110</span> <span class="tower-count" data-tower-count="encryption">0/3</span></div>
+          </div>
+        </div>
+
+        <div id="info-panel">
+          <h3 id="info-title">Select a defense</h3>
+          <p id="info-body">Click a defense card above, then click an open tile on the grid to deploy it. Click a placed tower to see details, upgrade it, or sell it.</p>
+          <button id="upgrade-btn" style="display:none;"></button>
+          <button id="sell-btn" style="display:none;">Sell</button>
+        </div>
+      </div>
+
+      <canvas id="game-canvas" width="960" height="640"></canvas>
+
+      <div id="intel">
+        <h2>Threat Intel</h2>
+        <div id="intel-feed"></div>
+      </div>
+    </main>
+
+    <div id="overlay">
+      <div id="overlay-box"></div>
+    </div>
+
+    <div id="manual-overlay" class="hidden">
+      <div id="manual-box">
+        <div id="manual-header">
+          <h2>📖 Field Manual</h2>
+          <button id="manual-close-btn">✕ Close</button>
+        </div>
+        <div id="manual-tabs">
+          <button class="manual-tab-btn active" data-tab="defenses">Defenses</button>
+          <button class="manual-tab-btn" data-tab="threats">Threats</button>
+          <button class="manual-tab-btn" data-tab="matrix">Effectiveness Matrix</button>
+        </div>
+        <div id="manual-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
